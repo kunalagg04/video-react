@@ -2,6 +2,7 @@ import "./App.css";
 import React from "react";
 import SearchBar from "./SearchBar";
 import youtube from "../api/youtube";
+import VideoList from "./VideoList";
 
 class App extends React.Component {
   state = { videos: [], selectedvideo: null };
@@ -30,6 +31,8 @@ class App extends React.Component {
         <br />
 
         <SearchBar onSubmit={this.onFormSubmit} />
+        {/*Passing state as prop ! */}
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
